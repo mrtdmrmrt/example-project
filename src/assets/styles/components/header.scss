@@ -1,0 +1,118 @@
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px;
+
+    position: sticky;
+    top: 0;
+
+    background-color: #ECF3FC;
+
+    &--left {
+        display: flex;
+        align-items: center;
+
+        &--icon {
+            color: #A4C7F0;
+            font-size: 2rem;
+            margin-right: 2rem;
+        }
+
+        &--site-name {
+            color: #5C9BE4;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+
+    &--right {
+        display: flex;
+        align-items: center;
+
+        &--user {
+            &-info {
+                &-dropdown {
+                    color: #174171;
+
+                    &>i {
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        &--contact {
+            &>a {
+                text-decoration: none;
+                color: #174171;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.header__container--right--lang>.dp-select {
+    width: 120% !important;
+    font-weight: 600;
+}
+
+.header__container--right--lang>.dp-select>.dp-select--selection {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.header__container--right--lang>.dp-select>.dp-select__menu>.dp-select--dropdown-list>.dp-select__item--selected::before {
+    display: none !important;
+}
+
+.modal-footer-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.responsiveBtn {
+    display: none;
+    cursor: pointer;
+
+    &>i {
+        font-size: 2rem;
+        color: #174171;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header__container .header__container--right {
+        display: none;
+    }
+
+    .responsiveBtn {
+        float: right;
+        display: block !important;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header__container.responsive {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .header__container.responsive .header__container--right {
+        display: block !important;
+        text-align: left;
+        opacity: 0.7;
+        padding-top: 20px;
+        border-radius: 10px;
+    }
+
+    .header__container--right--lang>.dp-select {
+        width: 15% !important;
+    }
+}

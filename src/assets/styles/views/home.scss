@@ -1,0 +1,21 @@
+.home__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 90%;
+    margin: auto;
+    padding: 50px;
+
+    &--title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #4A4A4A;
+    }
+
+    &--parag {
+        margin-top: 2rem;
+        color: #4A4A4A;
+        line-height: 2rem;
+    }
+}

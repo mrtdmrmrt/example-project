@@ -1,0 +1,14 @@
+.footer__container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: linear-gradient(to right, #5C9BE4, #F6F9FD);
+    color: #174171;
+}
