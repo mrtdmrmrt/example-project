@@ -70,7 +70,9 @@
 
 .modal-footer-button {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 4px;
 }
 
 .responsiveBtn {

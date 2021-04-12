@@ -73,6 +73,9 @@ export default {
       this.$i18n.locale = this.lang;
       this.$store.dispatch('lang/setLang', this.lang);
     },
+    vuexGetLogin(){
+      if(this.vuexGetLogin.locale) this.lang = this.vuexGetLogin.locale.toLowerCase();
+    }
   },
   methods: {
     showLoginModal() {

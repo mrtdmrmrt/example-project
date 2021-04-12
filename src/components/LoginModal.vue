@@ -1,6 +1,11 @@
 <template>
   <div>
-    <dp-modal v-if="vuexGetIsLoginBTN" icon="x" @close="closeLoginModal" width="500">
+    <dp-modal
+      v-if="vuexGetIsLoginBTN"
+      icon="x"
+      @close="closeLoginModal"
+      width="500"
+    >
       <p slot="header">LOGIN</p>
       <template slot="body">
         <dp-input
@@ -25,6 +30,21 @@
       </template>
       <template slot="footer">
         <div class="modal-footer-button">
+          <dp-select
+            id="contactCountry"
+            class="mr-2"
+            v-model="userLogin.locale"
+            searchable
+            placeholder="Select a Locale"
+          >
+            <dp-select-option
+              v-for="item in localeList"
+              :key="item.id"
+              :value="item.id"
+            >
+              {{ item.name }}
+            </dp-select-option>
+          </dp-select>
           <dp-button @click="login" id="login" type="primary">Login</dp-button>
         </div>
       </template>
@@ -41,7 +61,12 @@ export default {
         name: '',
         email: '',
         password: '',
+        locale: '',
       },
+      localeList: [
+        { id: 'TR', name: 'Turkish' },
+        { id: 'EN', name: 'English' },
+      ],
     };
   },
   computed: {

@@ -71,14 +71,14 @@ export default {
   data() {
     return {
       countryList: [
-        { id: 'TR', name: 'Turkey' },
-        { id: 'US', name: 'United States of America' },
-        { id: 'GB', name: 'United Kingdom' },
-        { id: 'DE', name: 'Germany' },
-        { id: 'SE', name: 'Sweden' },
+        { id: 'TR', name: 'Türkiye' },
+        { id: 'US', name: 'Amerika Birleşik Devletleri' },
+        { id: 'GB', name: 'Birleşik Krallık' },
+        { id: 'DE', name: 'Almanya' },
+        { id: 'SE', name: 'İsveç' },
         { id: 'KE', name: 'Kenya' },
-        { id: 'BR', name: 'Brazil' },
-        { id: 'ZW', name: 'Zimbabwe' },
+        { id: 'BR', name: 'Brezilya' },
+        { id: 'ZW', name: 'Zimbabve' },
       ],
       contactInfo: {
         name: '',
@@ -96,10 +96,38 @@ export default {
     vuexGetLogin() {
       return this.$store.getters['user/getLogin'];
     },
+    vuexGetLang() {
+      return this.$store.getters['lang/getLang'];
+    },
   },
   watch: {
     vuexGetLogin() {
       this.userLoginInformation();
+    },
+    vuexGetLang() {
+      if (this.vuexGetLang == 'tr') {
+        this.countryList = [
+          { id: 'TR', name: 'Türkiye' },
+          { id: 'US', name: 'Amerika Birleşik Devletleri' },
+          { id: 'GB', name: 'Birleşik Krallık' },
+          { id: 'DE', name: 'Almanya' },
+          { id: 'SE', name: 'İsveç' },
+          { id: 'KE', name: 'Kenya' },
+          { id: 'BR', name: 'Brezilya' },
+          { id: 'ZW', name: 'Zimbabve' },
+        ];
+      } else {
+        this.countryList = [
+          { id: 'TR', name: 'Turkey' },
+          { id: 'US', name: 'United States of America' },
+          { id: 'GB', name: 'United Kingdom' },
+          { id: 'DE', name: 'Germany' },
+          { id: 'SE', name: 'Sweden' },
+          { id: 'KE', name: 'Kenya' },
+          { id: 'BR', name: 'Brazil' },
+          { id: 'ZW', name: 'Zimbabwe' },
+        ];
+      }
     },
   },
   validations: {
@@ -145,15 +173,15 @@ export default {
         console.log('contact info=>', this.contactInfo);
       }
     },
-    userLoginInformation(){
+    userLoginInformation() {
       if (this.vuexGetLogin) {
         this.contactInfo.name = this.vuexGetLogin.name;
         this.contactInfo.email = this.vuexGetLogin.email;
-      }else{
+      } else {
         this.contactInfo.name = '';
         this.contactInfo.email = '';
       }
-    }
+    },
   },
   mounted() {
     this.userLoginInformation();

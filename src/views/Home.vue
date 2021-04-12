@@ -15,17 +15,7 @@ export default {
   name: 'Home',
   components: {
     Layout,
-  },
-  computed: {
-    vuexGetLang() {
-      return this.$store.getters['lang/getLang'];
-    },
-  },
-  watch: {
-    vuexGetLang() {
-      console.log('Dil değişti->', this.vuexGetLang);
-    },
-  },
+  }
 };
 </script>
 
